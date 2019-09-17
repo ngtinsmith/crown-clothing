@@ -1,5 +1,4 @@
 export const addItemToCart = (cartItems, cartItemToAdd) => {
-    
     // check if item exists in current cartItems[] array
     const existingItem = cartItems.find(
         cartItem => cartItem.id === cartItemToAdd.id
@@ -36,10 +35,9 @@ export const removeItemFromCart = (cartItems, cartItemToRemove) => {
     }
 
     // if quantity > 1
-    return cartItems.map(
-        cartItem =>
-            cartItem.id === cartItemToRemove.id
-                ? { ...cartItem, quantity: cartItem.quantity - 1 }
-                : cartItem
+    return cartItems.map(cartItem =>
+        cartItem.id === cartItemToRemove.id
+            ? { ...cartItem, quantity: cartItem.quantity - 1 }
+            : cartItem
     )
 }

@@ -4,7 +4,10 @@ import './sign-up.styles.scss'
 import FormInput from '../form-input/form-input.component'
 import CustomButtom from '../custom-button/custom-button.component'
 
-import { auth, createUserProfileDocument } from '../../firebase/firebase.utils'
+import {
+    auth,
+    createUserProfileDocument
+} from '../../firebase/firebase.utils'
 
 class SignUp extends React.Component {
     constructor() {
@@ -14,22 +17,32 @@ class SignUp extends React.Component {
             displayName: '',
             email: '',
             password: '',
-            confirmPassword: '',
+            confirmPassword: ''
         }
     }
 
     handleSubmit = async event => {
         event.preventDefault()
 
-        const { displayName, email, password, confirmPassword } = this.state
+        const {
+            displayName,
+            email,
+            password,
+            confirmPassword
+        } = this.state
 
         if (password !== confirmPassword) {
-            console.log('password doesn\'t match')
+            console.log("password doesn't match")
             return
         }
 
         try {
-            const { user } = await auth.createUserWithEmailAndPassword(email, password)
+            const {
+                user
+            } = await auth.createUserWithEmailAndPassword(
+                email,
+                password
+            )
 
             await createUserProfileDocument(user, { displayName })
 
@@ -37,7 +50,7 @@ class SignUp extends React.Component {
                 displayName: '',
                 email: '',
                 password: '',
-                confirmPassword: '',
+                confirmPassword: ''
             })
         } catch (error) {
             console.error(error)
@@ -51,13 +64,21 @@ class SignUp extends React.Component {
     }
 
     render() {
-        const { displayName, email, password, confirmPassword } = this.state
+        const {
+            displayName,
+            email,
+            password,
+            confirmPassword
+        } = this.state
 
         return (
             <div className='sign-up'>
                 <h2 className='title'>Sign Up</h2>
                 <span>Sign up with your email and password</span>
-                <form className='sign-up-form' onSubmit={this.handleSubmit}>
+                <form
+                    className='sign-up-form'
+                    onSubmit={this.handleSubmit}
+                >
                     <FormInput
                         type='text'
                         name='displayName'
@@ -90,7 +111,7 @@ class SignUp extends React.Component {
                         label='Confirm Password'
                         required
                     />
-                    
+
                     <CustomButtom type='submit'>SIGN UP</CustomButtom>
                 </form>
             </div>
