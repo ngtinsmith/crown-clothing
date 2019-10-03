@@ -1,15 +1,25 @@
 {  
     "extends": [
         "airbnb",
-        "react-app",
         "plugin:react/recommended"
     ],
+    "plugins": [
+        "react",
+        "prettier"
+    ],
+    "parser": "babel-eslint",
     "env": 
     {    
         "node": true,    
         "es6": true,    
         "browser": true  
-    },  
+    },
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "latest"
+        }
+    },
     "rules": 
     {    
         "semi": [2, "never"],
@@ -32,10 +42,7 @@
         "react/jsx-indent-props": [2, 4],
         "react/prop-types": "off",
         "react/jsx-one-expression-per-line": [0, { "allow": "none" }],
-        "react/jsx-props-no-spreading": ["error", {
-            "html": "ignore",
-            "custom": "ignore"
-        }],
+        "react/jsx-props-no-spreading": "off",
         "jsx-quotes": [2, "prefer-single"],
         "jsx-a11y/click-events-have-key-events": "off",
         "jsx-a11y/label-has-associated-control": "off",
