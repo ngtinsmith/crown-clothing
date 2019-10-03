@@ -4,7 +4,6 @@
         "react-app",
         "plugin:react/recommended"
     ],
-    "parser": "babel-eslint",
     "env": 
     {    
         "node": true,    
@@ -33,7 +32,7 @@
         "react/jsx-indent-props": [2, 4],
         "react/prop-types": "off",
         "react/jsx-one-expression-per-line": [0, { "allow": "none" }],
-        "react/jsx-props-no-spreading": [{
+        "react/jsx-props-no-spreading": ["error", {
             "html": "ignore",
             "custom": "ignore"
         }],
