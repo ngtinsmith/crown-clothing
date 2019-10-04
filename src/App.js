@@ -24,7 +24,7 @@ class App extends React.Component {
 
                 checking server
                 fetching from server
-                update reducer
+                update reducers
         */
 
         const { checkUserSession } = this.props
