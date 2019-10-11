@@ -7,7 +7,7 @@
         "react",
         "prettier"
     ],
-    "parser": "babel-eslint",
+    // "parser": "babel-eslint",
     "env": 
     {    
         "node": true,    
